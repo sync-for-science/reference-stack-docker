@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Waiting for FHIR server..."
+while ! nc -z hapi 8080; do
+  sleep 0.5
+done
+echo "Found FHIR server! Creating data..."
+
+cd patients
+
+for x in *.xml | head -n 10; do
+  curl -H "Content-type: application/xml+fhir" -X POST -d @$x http://hapi:8080/baseDstu2/
+done
+
+echo "Created data!"

@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  hapi:
+    build:
+      context: ./docker-builds/hapi
+      dockerfile: Dockerfile
+    image: s4s-hapi
+    ports:
+     - "8080:8080"
+    networks:
+     - internal
+  tasks:
+    build:
+      context: ./docker-builds/tasks
+      dockerfile: Dockerfile
+    image: s4s-tasks
+    networks:
+     - internal
+
+networks:
+  internal:
+    driver: bridge
