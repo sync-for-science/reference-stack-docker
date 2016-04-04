@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  hapi:
+  api:
     build:
       context: ./docker-builds/reference-api
       dockerfile: Dockerfile
