@@ -3,18 +3,18 @@ version: '2'
 services:
   hapi:
     build:
-      context: ./docker-builds/hapi
+      context: ./docker-builds/reference-api
       dockerfile: Dockerfile
-    image: s4s-hapi
+    image: syncforscience/reference-api
     ports:
      - "8080:8080"
     networks:
      - internal
   tasks:
     build:
-      context: ./docker-builds/tasks
+      context: ./docker-builds/reference-tasks
       dockerfile: Dockerfile
-    image: s4s-tasks
+    image: syncforscience/reference-tasks
     networks:
      - internal
 
