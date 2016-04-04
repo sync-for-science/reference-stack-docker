@@ -3,6 +3,9 @@ MAINTAINER Josh Mandel
 RUN mkdir /tasks
 WORKDIR /tasks
 
+RUN apt-get update && \
+    apt-get install -y netcat curl
+
 RUN git clone https://github.com/smart-on-fhir/sample-patients -b hapi-patients-testing --depth 1 && \
     cd sample-patients && \
     pip install -r requirements.txt && \
