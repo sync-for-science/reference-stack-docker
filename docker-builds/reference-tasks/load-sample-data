@@ -8,7 +8,7 @@ echo "Found FHIR server! Creating data..."
 
 cd patients
 
-for x in *.xml | head -n 10; do
+for x in `ls *.xml | head -n 10`; do
   curl -H "Content-type: application/xml+fhir" -X POST -d @$x http://api:8080/baseDstu2/
 done
 
