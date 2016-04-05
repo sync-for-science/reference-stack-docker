@@ -1,6 +1,19 @@
 version: '2'
 
 services:
+  smart:
+    build:
+      context: ./docker-builds/reference-smart
+      dockerfile: Dockerfile
+    image: syncforscience/reference-smart
+    environment:
+     - API_SERVER=http://api:8080/baseDstu2
+    env_file:
+     - "./smart.local.env"
+    networks:
+     - internal
+    ports:
+     - "9000:8080"
   api:
     build:
       context: ./docker-builds/reference-api
