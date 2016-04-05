@@ -8,12 +8,13 @@ services:
     image: syncforscience/reference-smart
     environment:
      - API_SERVER=http://api:8080/baseDstu2
+     - PORT=3000
     env_file:
      - "./smart.local.env"
     networks:
      - internal
     ports:
-     - "9000:8080"
+     - "9000:3000"
   api:
     build:
       context: ./docker-builds/reference-api
