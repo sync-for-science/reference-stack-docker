@@ -6,6 +6,7 @@ RUN cd / && git clone https://github.com/smart-on-fhir/smart-stub -b refactor &&
     npm install
 
 COPY launch-smart-server /bin/launch-smart-server
+COPY clients.json /smart-stub/defaults/clients.json
 
 WORKDIR /smart-stub
 
