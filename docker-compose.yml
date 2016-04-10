@@ -15,7 +15,16 @@ services:
      - internal
     ports:
      - "9000:3000"
-  api:
+  app:
+    build:
+      context: ./docker-builds/reference-app
+      dockerfile: Dockerfile
+    image: syncforscience/reference-app
+    networks:
+     - internal
+    ports:
+     - "8000:80"
+   api:
     build:
       context: ./docker-builds/reference-api
       dockerfile: Dockerfile
