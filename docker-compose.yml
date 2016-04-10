@@ -24,7 +24,7 @@ services:
      - internal
     ports:
      - "8000:80"
-   api:
+  api:
     build:
       context: ./docker-builds/reference-api
       dockerfile: Dockerfile
