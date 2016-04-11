@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  smart:
+    volumes:
+     - "/noauth.smarthealthit.org/defaults:/smart-stub/defaults/"
+    env_file:
+     - "./deploys/noauth.smarthealthit.org/smart.local.env"
