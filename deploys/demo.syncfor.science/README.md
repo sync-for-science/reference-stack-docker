@@ -33,4 +33,4 @@ docker-compose \
 
 ### See it in action
 
-https://portal.demo.syncfor.science
+https://app.demo.syncfor.science/fhir-app/launch.html?iss=https://portal.demo.syncfor.science/api/fhir
