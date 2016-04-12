@@ -6,7 +6,7 @@
   "client_secret": "demo-secret-s4s",
   "redirect_uris": [
     "http://localhost:8000/fhir-app/",
-    "https://app.demo.syncfor.science/fhir-app/"
+    "https://demo.syncfor.science/fhir-app/"
   ],
   "grant_types": ["authorization_code"],
   "response_types": ["code"],
