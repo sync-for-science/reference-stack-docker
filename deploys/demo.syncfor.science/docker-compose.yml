@@ -17,7 +17,6 @@ services:
     networks:
      - proxy-tier
     environment:
-     - BASE_URL=https://app.demo.syncfor.science
      - VIRTUAL_HOST=app.demo.syncfor.science
      - VIRTUAL_NETWORK=nginx-proxy
      - VIRTUAL_PORT=80
