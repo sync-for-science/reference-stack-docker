@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  smart:
+    environment:
+     - BASE_URL=http://localhost:9000
+    ports:
+     - "9000:80"
+  app:
+    ports:
+     - "9001:80"
+  api:
+    ports:
+     - "9002:8080"
