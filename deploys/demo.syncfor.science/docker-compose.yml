@@ -3,7 +3,7 @@ version: '2'
 services:
   smart:
     volumes:
-     - "/config/defaults:/smart-stub/defaults/"
+     - /config/defaults:/smart-stub/defaults/
     networks:
      - proxy-tier
     environment:
@@ -22,8 +22,14 @@ services:
      - VIRTUAL_PORT=80
      - LETSENCRYPT_HOST=demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
+  api:
+    volumes:
+     - derby:/hapi/target
 
 networks:
   proxy-tier:
     external:
       name: nginx-proxy
+
+volumes:
+  derby: {}
