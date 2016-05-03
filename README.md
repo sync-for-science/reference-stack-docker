@@ -14,6 +14,7 @@ By default, you'll have servers running at ports:
  * `9000`: SMART EHR server
  * `9001`: Demo app server
  * `9002`: For debugging only, the internal HAPI FHIR server
+ * `9003`: For testing only, the test suite client
 
 ---
 
