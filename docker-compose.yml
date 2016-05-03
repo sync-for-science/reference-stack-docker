@@ -26,6 +26,13 @@ services:
     image: syncforscience/reference-api
     networks:
      - internal
+  tests:
+    build:
+      context: ./docker-builds/reference-tests
+      dockerfile: Dockerfile
+    image: syncforscience/reference-tests
+    networks:
+      - internal
   tasks:
     build:
       context: ./docker-builds/reference-tasks

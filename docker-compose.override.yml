@@ -12,3 +12,6 @@ services:
   api:
     ports:
      - "9002:8080"
+  tests:
+    ports:
+     - "9003:5000"
