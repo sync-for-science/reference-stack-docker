@@ -1,0 +1,54 @@
+version: "2"
+
+# Technique from https://github.com/pixelfordinner/pixelcloud-docker-apps
+
+services:
+  nginx:
+    image: pixelfordinner/nginx
+    container_name: nginx_proxy
+    depends_on:
+      - lets-encrypt
+      - docker-gen
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - conf:/etc/nginx/conf.d
+      - vhost:/etc/nginx/vhost.d:ro
+      - certs:/etc/nginx/certs:ro
+      - html:/usr/share/nginx/html:ro
+    networks:
+      - proxy-tier
+  docker-gen:
+    image: jwilder/docker-gen
+    container_name: docker_gen
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /config/templates:/etc/docker-gen/templates:ro
+      - conf:/etc/nginx/conf.d
+      - vhost:/etc/nginx/vhost.d
+      - certs:/etc/nginx/certs:ro
+    entrypoint: /usr/local/bin/docker-gen -notify-sighup nginx_proxy -watch -only-exposed -wait 5s:30s /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf
+  lets-encrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    depends_on:
+      - docker-gen
+    volumes:
+      - conf:/etc/nginx/conf.d
+      - vhost:/etc/nginx/vhost.d
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - NGINX_DOCKER_GEN_CONTAINER=docker_gen
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy
+volumes:
+  conf: {}
+  vhost: {}
+  certs: {}
+  html: {}
