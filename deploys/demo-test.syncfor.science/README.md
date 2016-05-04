@@ -27,7 +27,7 @@ docker-compose \
 
 ```
 docker-compose \
-  -f deploys/demo-test.syncfor.science/nginx-ssl-proxy/docker-compose.yml
+  -f deploys/demo-test.syncfor.science/nginx-ssl-proxy/docker-compose.yml \
   up -d
 ```
 
