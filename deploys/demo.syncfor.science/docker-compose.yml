@@ -25,6 +25,15 @@ services:
   api:
     volumes:
      - derby:/hapi/target
+  tests:
+    networks:
+     - proxy-tier
+    environment:
+     - VIRTUAL_HOST=tests.demo.syncfor.science
+     - VIRTUAL_NETWORK=nginx-proxy
+     - VIRTUAL_PORT=5000
+     - LETSENCRYPT_HOST=tests.demo.syncfor.science
+     - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
 
 networks:
   proxy-tier:
