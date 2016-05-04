@@ -31,6 +31,7 @@ services:
       context: ./docker-builds/reference-tests
       dockerfile: Dockerfile
     image: syncforscience/reference-tests
+    expose: ["5000"]
     networks:
       - internal
   tasks:
