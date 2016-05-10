@@ -5,7 +5,7 @@
   "scope": "patient/*.read",
   "client_secret": "demo-secret-s4s",
   "redirect_uris": [
-    "http://localhost:8000/authorized/",
+    "http://localhost:9001/authorized/",
     "https://research-app.demo.syncfor.science/authorized/"
   ],
   "grant_types": ["authorization_code"],
