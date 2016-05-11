@@ -1,6 +1,14 @@
-# reference-stack-docker
+# Use and deploy this stack
 
 To run it, you need Docker >= 1.10, and docker-compose
+
+## Clone this repo with submodules
+ * `git clone --recursive https://github.com/sync-for-science/reference-stack-docker`
+
+## Update submodules
+ * `git submodule update --init --recursive`
+
+# Configure and run locally
 
 Edit `docker-compose.override.yml` as needed to configure your preferred local port mappings, then:
 
@@ -18,6 +26,6 @@ By default, you'll have servers running at ports:
 
 ---
 
-## Deploy in prod
+# Deploy in prod
 
 For example, see [./deploys/demo.syncfor.science](./deploys/demo.syncfor.science)
