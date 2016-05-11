@@ -1,0 +1,10 @@
+[submodule "docker-builds/reference-tasks/sample-patients"]
+	path = docker-builds/reference-tasks/sample-patients
+	url = https://github.com/smart-on-fhir/sample-patients
+	branch = hapi-patients-testing
+[submodule "docker-builds/reference-tests/source"]
+	path = docker-builds/reference-tests/source
+	url = https://github.com/sync-for-science/demo-test-suite
+[submodule "docker-builds/reference-smart/source"]
+	path = docker-builds/reference-smart/source
+	url = https://github.com/smart-on-fhir/smart-stub
