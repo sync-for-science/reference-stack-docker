@@ -8,3 +8,4 @@
 [submodule "docker-builds/reference-smart/source"]
 	path = docker-builds/reference-smart/source
 	url = https://github.com/smart-on-fhir/smart-stub
+	branch = refactor
