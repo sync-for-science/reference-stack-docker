@@ -5,7 +5,7 @@ To run it, you need Docker >= 1.10, and docker-compose
 ## Clone this repo with submodules
  * `git clone --recursive https://github.com/sync-for-science/reference-stack-docker`
 
-## Update submodules
+## Update submodules after git pull
  * `git submodule update --init --recursive`
 
 # Configure and run locally
@@ -23,6 +23,10 @@ By default, you'll have servers running at ports:
  * `9001`: Demo app server
  * `9002`: For debugging only, the internal HAPI FHIR server
  * `9003`: For testing only, the test suite client
+
+## Update submodules to latest on GH branches
+ * `git submodule update --remote`
+
 
 ---
 
