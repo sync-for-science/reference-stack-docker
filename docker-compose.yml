@@ -34,6 +34,14 @@ services:
     expose: ["5000"]
     networks:
       - internal
+  crucible:
+    build:
+      context: ./docker-builds/reference-crucible
+      dockerfile: Dockerfile
+    image: syncforscience/reference-crucible
+    networks:
+      - internal
+
   tasks:
     build:
       context: ./docker-builds/reference-tasks

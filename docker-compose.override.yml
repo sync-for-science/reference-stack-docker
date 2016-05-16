@@ -15,3 +15,6 @@ services:
   tests:
     ports:
      - "9003:5000"
+  crucible:
+    ports:
+      - "9004:80"
