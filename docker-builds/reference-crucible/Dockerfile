@@ -19,6 +19,10 @@ RUN apt-get install -y mongodb mongodb-server && \
 RUN mkdir -p /etc/service/mongodb/
 ADD mongodb.sh /etc/service/mongodb/run
 
+# Set up delayed jobs
+ADD delayed-job /etc/init.d/delayed-job
+RUN update-rc.d delayed-job defaults
+
 # Install Bower
 RUN apt-get install -y nodejs && \
     npm install bower -g
