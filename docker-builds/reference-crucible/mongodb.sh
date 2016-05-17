@@ -1,2 +1,2 @@
 #!/bin/sh
-exec /usr/bin/mongod
+exec /usr/sbin/service mongodb start
