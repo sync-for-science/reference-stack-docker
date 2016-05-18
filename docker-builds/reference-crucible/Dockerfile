@@ -53,7 +53,7 @@ ENV HOME /home/app
 RUN cd /home/app/crucible && bundle install
 RUN cd /home/app/crucible \
     && service mongodb start \
-    && bundle exec rake assets:precompile RAILS_ENV=production
+    && bundle exec rake assets:precompile RAILS_ENV=development
 
 RUN chown -R app: /home/app/crucible
 

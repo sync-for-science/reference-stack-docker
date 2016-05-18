@@ -11,22 +11,22 @@ RETVAL=0
 case "$1" in
     start)
       cd /home/app/crucible
-      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=production bin/delayed_job -n3 start'
+      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=development bin/delayed_job -n3 start'
       RETVAL=$?
       ;;
     stop)
       cd /home/app/crucible
-      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=production bin/delayed_job stop'
+      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=development bin/delayed_job stop'
       RETVAL=$?
       ;;
     restart)
       cd /home/app/crucible
-      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=production bin/delayed_job restart'
+      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=development bin/delayed_job restart'
       RETVAL=$?
       ;;
     status)
       cd /home/app/crucible
-      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=production bin/delayed_job status'
+      su app -c 'export PATH=$PATH:/home/ubuntu/.rbenv/versions/2.2.3/bin/ ; RAILS_ENV=development bin/delayed_job status'
       RETVAL=$?
       ;;
     *)
