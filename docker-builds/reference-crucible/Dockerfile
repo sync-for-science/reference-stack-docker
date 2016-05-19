@@ -45,11 +45,15 @@ WORKDIR /home/app/crucible
 # Install crucible dependencies
 RUN cd /home/app/crucible && bower install
 
+# Use our own test suite
+RUN git clone https://github.com/sync-for-science/plan_executor.git /home/app/plan_executor
+
 # Switch back to root
 USER root
 ENV HOME /home/app
 
 # Install crucible dependencies
+RUN cd /home/app/crucible && bundle config local.plan_executor /home/app/plan_executor
 RUN cd /home/app/crucible && bundle install
 RUN cd /home/app/crucible \
     && service mongodb start \
