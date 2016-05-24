@@ -17,10 +17,10 @@ services:
     networks:
      - proxy-tier
     environment:
-     - VIRTUAL_HOST=demo-test.syncfor.science
+     - VIRTUAL_HOST=app.demo-test.syncfor.science
      - VIRTUAL_NETWORK=nginx-proxy
-     - VIRTUAL_PORT=80
-     - LETSENCRYPT_HOST=demo-test.syncfor.science
+     - VIRTUAL_PORT=6543
+     - LETSENCRYPT_HOST=app.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
   api:
     volumes:
@@ -34,6 +34,8 @@ services:
      - VIRTUAL_PORT=5000
      - LETSENCRYPT_HOST=tests.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
+    volumes:
+      - /config/vendors/:/demo-test-suite/config
   crucible:
     networks:
      - proxy-tier
