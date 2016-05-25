@@ -17,6 +17,7 @@ services:
       context: ./docker-builds/reference-app
       dockerfile: Dockerfile
     image: syncforscience/reference-app
+    expose: ["6543"]
     networks:
      - internal
   api:

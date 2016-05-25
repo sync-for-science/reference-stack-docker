@@ -6,4 +6,6 @@ WORKDIR /demo-test-suite
 RUN pip install -r requirements.txt && pip install fhirclient
 COPY behave.ini.dist /demo-test-suite/behave.ini.dist
 
+VOLUME ["/demo-test-suite/config"]
+
 CMD ["python", "-m", "runserver"]

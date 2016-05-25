@@ -66,5 +66,7 @@ RUN chown -R app: /home/app/crucible
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN echo "ubuntu:x:1000:app" >> /etc/group
+
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]

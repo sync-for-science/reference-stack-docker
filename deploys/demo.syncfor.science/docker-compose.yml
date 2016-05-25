@@ -17,10 +17,10 @@ services:
     networks:
      - proxy-tier
     environment:
-     - VIRTUAL_HOST=demo.syncfor.science
+     - VIRTUAL_HOST=app.demo.syncfor.science
      - VIRTUAL_NETWORK=nginx-proxy
-     - VIRTUAL_PORT=80
-     - LETSENCRYPT_HOST=demo.syncfor.science
+     - VIRTUAL_PORT=6543
+     - LETSENCRYPT_HOST=app.demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
   api:
     volumes:

@@ -5,8 +5,9 @@
   "scope": "patient/*.read",
   "client_secret": "demo-secret-s4s",
   "redirect_uris": [
-    "http://localhost:9001/authorized/",
-    "https://research-app.demo.syncfor.science/authorized/"
+    "http://localhost:9001/authorized",
+    "http://app.dev.syncfor.science:9001/authorized",
+    "https://research-app.demo.syncfor.science/authorized"
   ],
   "grant_types": ["authorization_code"],
   "response_types": ["code"],
@@ -19,7 +20,8 @@
   "client_secret": "demo-secret-s4s",
   "redirect_uris": [
     "http://localhost:9003/authorized/",
-    "https://tests.demo.syncfor.science/authorized/"
+    "https://tests.demo.syncfor.science/authorized/",
+    "http://tests.dev.syncfor.science:9003/authorized/"
   ],
   "grant_types": ["authorization_code"],
   "response_types": ["code"],
