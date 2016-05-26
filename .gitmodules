@@ -9,3 +9,6 @@
 	path = docker-builds/reference-smart/source
 	url = https://github.com/smart-on-fhir/smart-stub
 	branch = refactor
+[submodule "docker-builds/reference-app/source"]
+	path = docker-builds/reference-app/source
+	url = https://github.com/sync-for-science/reference-research-app
