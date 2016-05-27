@@ -34,6 +34,8 @@ services:
      - VIRTUAL_PORT=5000
      - LETSENCRYPT_HOST=tests.demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
+    volumes:
+      - /config/vendors/:/demo-test-suite/config
   crucible:
     networks:
      - proxy-tier

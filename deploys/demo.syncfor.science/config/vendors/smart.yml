@@ -1,0 +1,12 @@
+---
+api:
+  url: https://portal.demo-test.syncfor.science/api/fhir/
+  patient: smart-1288992
+
+auth:
+  username: demo
+  password: demo
+  client_id: test-suite
+  client_secret: demo-secret-s4s
+  scope: launch patient/*.read offline_access
+  confidential_client: True
