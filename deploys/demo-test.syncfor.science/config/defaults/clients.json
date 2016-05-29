@@ -1,12 +1,30 @@
 [{
-  "client_id": "app-demo",
-  "client_name": "S4S Research App Demo",
-  "client_uri": "https://demo-test.syncfor.science",
+  "client_id": "research-app",
+  "client_name": "S4S Reference Research App",
+  "client_uri": "https://research-app.demo.syncfor.science",
   "scope": "patient/*.read",
   "client_secret": "demo-secret-s4s",
   "redirect_uris": [
-    "http://localhost:8000/fhir-app/",
-    "https://demo-test.syncfor.science/fhir-app/"
+    "http://localhost:9001/authorized",
+    "http://app.dev.syncfor.science:9001/authorized",
+    "https://app.demo-test.syncfor.science/authorized",
+    "https://app.demo.syncfor.science/authorized"
+  ],
+  "grant_types": ["authorization_code"],
+  "response_types": ["code"],
+  "token_endpoint_auth_method": "client_secret_basic"
+}, {
+  "client_id": "test-suite",
+  "client_name": "S4S Reference Test Suite",
+  "client_uri": "https://tests.demo.syncfor.science",
+  "scope": "patient/*.read",
+  "client_secret": "demo-secret-s4s",
+  "redirect_uris": [
+    "http://localhost:9003/authorized/",
+    "http://tests.dev.syncfor.science:9003/authorized/",
+    "https://tests.demo-test.syncfor.science/authorized/",
+    "https://tests.demo.syncfor.science/authorized/",
+    "https://www.getpostman.com/oauth2/callback"
   ],
   "grant_types": ["authorization_code"],
   "response_types": ["code"],
@@ -25,7 +43,7 @@
 }, {
   "client_id": "portal-demo",
   "client_name": "S4S Portal Demo",
-  "client_uri": "https://portal.demo-test.syncfor.science",
+  "client_uri": "https://portal.demo.syncfor.science",
   "scope": "smart/portal",
   "redirect_uris": [ ],
   "grant_types": ["password"]
