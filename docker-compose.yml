@@ -20,6 +20,14 @@ services:
     expose: ["6543"]
     networks:
      - internal
+  landing:
+    build:
+      context: ./docker-builds/landing-page
+      dockerfile: Dockerfile
+    image: syncforscience/landing-page
+    expose: ["80"]
+    networks:
+     - internal
   api:
     build:
       context: ./docker-builds/reference-api
