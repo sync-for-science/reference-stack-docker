@@ -37,7 +37,7 @@ ADD crucible.conf /etc/nginx/sites-enabled/crucible.conf
 USER app
 
 # Clone crucible project
-RUN git clone https://github.com/fhir-crucible/crucible.git /home/app/crucible
+RUN git clone -b dstu2 https://github.com/fhir-crucible/crucible.git /home/app/crucible
 
 # Work from the crucible directory
 WORKDIR /home/app/crucible
@@ -46,7 +46,7 @@ WORKDIR /home/app/crucible
 RUN cd /home/app/crucible && bower install
 
 # Use our own test suite
-RUN git clone https://github.com/sync-for-science/plan_executor.git /home/app/plan_executor
+RUN git clone -b dstu2 https://github.com/sync-for-science/plan_executor.git /home/app/plan_executor
 
 # Switch back to root
 USER root
