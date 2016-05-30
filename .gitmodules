@@ -12,3 +12,9 @@
 [submodule "docker-builds/reference-app/source"]
 	path = docker-builds/reference-app/source
 	url = https://github.com/sync-for-science/reference-research-app
+[submodule "docker-builds/reference-crucible/source/plan_executor"]
+	path = docker-builds/reference-crucible/source/plan_executor
+	url = https://github.com/sync-for-science/plan_executor.git
+[submodule "docker-builds/reference-crucible/source/crucible"]
+	path = docker-builds/reference-crucible/source/crucible
+	url = https://github.com/fhir-crucible/crucible.git

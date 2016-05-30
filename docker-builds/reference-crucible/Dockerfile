@@ -33,31 +33,33 @@ RUN rm /etc/nginx/sites-enabled/default
 # Provide our own nginx site config
 ADD crucible.conf /etc/nginx/sites-enabled/crucible.conf
 
-# Switch to "app" user
-USER app
-
 # Clone crucible project
-RUN git clone -b dstu2 https://github.com/fhir-crucible/crucible.git /home/app/crucible
+COPY source/crucible /home/app/crucible
+
+# Use our own test suite
+COPY source/plan_executor /home/app/plan_executor
+COPY Gemfile /home/app/crucible/Gemfile
 
 # Work from the crucible directory
 WORKDIR /home/app/crucible
 
-# Install crucible dependencies
-RUN cd /home/app/crucible && bower install
+# Make sure "app" can do everything it needs to
+RUN chown -R app: ./
 
-# Use our own test suite
-RUN git clone -b dstu2 https://github.com/sync-for-science/plan_executor.git /home/app/plan_executor
+# Switch to "app" user
+USER app
+
+# Install crucible dependencies
+RUN bower install
 
 # Switch back to root
 USER root
 ENV HOME /home/app
 
 # Install crucible dependencies
-RUN cd /home/app/crucible && bundle config local.plan_executor /home/app/plan_executor
-RUN cd /home/app/crucible && bundle install
-RUN cd /home/app/crucible \
-    && service mongodb start \
-    && bundle exec rake assets:precompile RAILS_ENV=development
+RUN bundle install
+RUN service mongodb start && \
+    bundle exec rake assets:precompile RAILS_ENV=development
 
 RUN chown -R app: /home/app/crucible
 
