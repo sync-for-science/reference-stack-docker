@@ -1,8 +1,6 @@
 FROM python:3
 MAINTAINER Josh Mandel
 
-RUN apt-get update&& apt-get install supervisor -y
-
 COPY source /demo-test-suite
 WORKDIR /demo-test-suite
 RUN pip install -r requirements.txt && pip install fhirclient
