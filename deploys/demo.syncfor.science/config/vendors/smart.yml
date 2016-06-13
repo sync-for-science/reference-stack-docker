@@ -1,12 +1,13 @@
 ---
 api:
-  url: https://portal.demo-test.syncfor.science/api/fhir/
-  patient: smart-1288992
+  url: https://portal.demo.syncfor.science/api/fhir/
 
 auth:
-  username: demo
-  password: demo
+  strategy: authorization_code
   client_id: test-suite
+  # client_secret intentionally included
   client_secret: demo-secret-s4s
-  scope: launch patient/*.read offline_access
+  scope: launch/patient patient/*.read offline_access
   confidential_client: True
+
+authorizer: !!python/name:testsuite.oauth.authorize.smart.SmartAuthorizer

@@ -17,4 +17,6 @@ RUN cd sample-patients && \
 
 ENV PATH /tasks:$PATH
 COPY load-sample-data /tasks/load-sample-data
+COPY register-client /tasks/register-client
+
 CMD ["echo", "short-running-task-service-closing-now"]
