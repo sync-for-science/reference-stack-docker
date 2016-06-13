@@ -3,11 +3,13 @@ MAINTAINER Josh Mandel
 
 # Install required packages
 RUN apt-get update
-RUN apt-get install -y xvfb chromium chromium-l10n
+RUN apt-get install -y xvfb unzip chromium chromium-l10n
 RUN apt-get clean
 
 # Install chromedriver
-ADD chromedriver_linux64.zip /usr/bin/
+COPY chromedriver_linux64.zip /opt/
+RUN unzip /opt/chromedriver_linux64.zip && \
+    ln -s /opt/chromedriver /usr/bin/chromedriver
 
 # Install phantomjs
 Add phantomjs-2.1.1-linux-x86_64.tar.bz2 /opt/
