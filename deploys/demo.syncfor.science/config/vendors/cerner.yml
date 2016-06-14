@@ -4,8 +4,10 @@ api:
   patient: 1316024
 
 auth:
-  strategy: refresh_token
+  strategy: authorization_code
   client_id: 117317b2-0153-4cc4-ba23-fe6ef5eb42d7
   client_secret:
   scope: launch patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
   launch: 0f4fbade-c41b-4d13-b6d2-e49d96e54c64
+
+authorizer: !!python/name:testsuite.oauth.authorize.cerner.CernerAuthorizer
