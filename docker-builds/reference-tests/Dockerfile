@@ -8,7 +8,7 @@ RUN apt-get clean
 
 # Install chromedriver
 COPY chromedriver_linux64.zip /opt/
-RUN unzip /opt/chromedriver_linux64.zip && \
+RUN unzip /opt/chromedriver_linux64.zip -d /opt/ && \
     ln -s /opt/chromedriver /usr/bin/chromedriver
 
 # Install phantomjs
