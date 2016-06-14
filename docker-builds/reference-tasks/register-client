@@ -1,0 +1,20 @@
+#!/bin/bash
+
+DEFAULT_SCOPES="launch/patient patient/*.read offline_access"
+
+CLIENT_ID="$1"
+CLIENT_SECRET="$2"
+REDIRECT_URIS="$3"
+SCOPES="${4-$DEFAULT_SCOPES}"
+
+echo "Registering..."
+echo "CLIENT_ID: $CLIENT_ID"
+echo "CLIENT_SECRET: $CLIENT_SECRET"
+echo "REDIRECT_URIS: $REDIRECT_URIS"
+echo "SCOPES: $SCOPES"
+
+curl -X POST http://smart:5000/oauth/register \
+    --data "client_id=$CLIENT_ID" \
+    --data "client_secret=$CLIENT_SECRET" \
+    --data "redirect_uris=$REDIRECT_URIS" \
+    --data "scopes=$SCOPES"

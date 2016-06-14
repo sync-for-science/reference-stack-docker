@@ -8,8 +8,7 @@ services:
     image: syncforscience/reference-smart
     environment:
      - API_SERVER=http://api:8080/baseDstu2
-     - PORT=80
-    expose: ["80"]
+    expose: ["5000"]
     networks:
      - internal
   app:

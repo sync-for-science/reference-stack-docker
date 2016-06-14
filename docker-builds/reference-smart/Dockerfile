@@ -1,12 +1,19 @@
-FROM node:5.10
+FROM python:3
 MAINTAINER Josh Mandel
 
-COPY source /smart-stub
-WORKDIR /smart-stub
-RUN npm install
+# Copy the codebase
+COPY source /auth-proxy
+WORKDIR /auth-proxy
 
-COPY launch-smart-server /bin/launch-smart-server
-COPY clients.json /smart-stub/defaults/clients.json
+# Install requirements
+RUN pip install -r requirements.txt
 
+# Init the db
+ENV FLASK_APP /auth-proxy/runserver.py
+ENV API_SERVER http://api:8080/baseDstu2
+RUN flask initdb
 
-CMD ["launch-smart-server"]
+# Set up uwsgi server
+COPY uwsgi.ini /etc/uwsgi.ini
+
+CMD ["uwsgi", "/etc/uwsgi.ini"]
