@@ -6,13 +6,15 @@ RUN apt-get update
 RUN apt-get install -y xvfb unzip chromium chromium-l10n
 RUN apt-get clean
 
+WORKDIR /opt
+RUN curl -s -O  http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+
 # Install chromedriver
-COPY chromedriver_linux64.zip /opt/
 RUN unzip /opt/chromedriver_linux64.zip -d /opt/ && \
     ln -s /opt/chromedriver /usr/bin/chromedriver
 
 # Install phantomjs
-Add phantomjs-2.1.1-linux-x86_64.tar.bz2 /opt/
+RUN curl -s -O https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2
 RUN ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
 # Copy the codebase
