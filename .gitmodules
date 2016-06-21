@@ -3,7 +3,7 @@
 	url = https://github.com/smart-on-fhir/sample-patients
 	branch = hapi-patients-testing
 [submodule "docker-builds/reference-tests/source"]
-	path = docker-builds/reference-tests/source
+	path = docker-builds/reference-tests
 	url = https://github.com/sync-for-science/demo-test-suite
 [submodule "docker-builds/reference-app/source"]
 	path = docker-builds/reference-app/source
