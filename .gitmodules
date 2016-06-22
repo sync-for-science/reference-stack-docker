@@ -15,5 +15,5 @@
 	path = docker-builds/reference-crucible/source/crucible
 	url = https://github.com/fhir-crucible/crucible.git
 [submodule "docker-builds/reference-smart/source"]
-	path = docker-builds/reference-smart/source
+	path = docker-builds/reference-smart
 	url = https://github.com/sync-for-science/auth-proxy.git
