@@ -1,0 +1,18 @@
+---
+class: !!python/name:auth_proxy.models.user.User
+args:
+  patient_id: smart-1288992
+---
+class: !!python/name:auth_proxy.models.oauth.Client
+args:
+  client_id: test-suite
+  client_secret: demo-secret-s4s
+  _redirect_uris: https://tests.demo.syncfor.science/authorized/
+  _default_scopes: launch/patient patient/*.read offline_access
+---
+class: !!python/name:auth_proxy.models.oauth.Client
+args:
+  client_id: research-app
+  client_secret: demo-secret-s4s
+  _redirect_uris: https://app.demo.syncfor.science/authorized
+  _default_scopes: launch/patient patient/*.read offline_access

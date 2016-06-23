@@ -19,10 +19,6 @@ docker-compose \
 
 docker-compose \
   run tasks load-sample-data
-docker-compose \
-  run tasks register-client test-suite demo-secret-s4s "https://tests.demo.syncfor.science/authorized/"
-docker-compose \
-  run tasks register-client research-app demo-secret-s4s "https://app.demo.syncfor.science/authorized"
 ```
 
 
