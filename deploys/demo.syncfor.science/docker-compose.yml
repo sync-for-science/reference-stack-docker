@@ -44,7 +44,7 @@ services:
      - LETSENCRYPT_HOST=tests.demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
-      - /config/vendors/:/demo-test-suite/config
+      - /config/vendors/:/usr/src/app/config
   crucible:
     networks:
      - proxy-tier
