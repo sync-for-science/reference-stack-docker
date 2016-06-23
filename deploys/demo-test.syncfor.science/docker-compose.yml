@@ -12,7 +12,8 @@ services:
      - LETSENCRYPT_HOST=portal.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
-      - db.sqlite:/auth-proxy/db.sqlite
+      - db.sqlite:/usr/src/app/db.sqlite
+      - /config/smart/fixtures.yml:/usr/src/app/auth_proxy/fixtures.yml
   app:
     networks:
      - proxy-tier
@@ -44,7 +45,7 @@ services:
      - LETSENCRYPT_HOST=tests.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
-      - /config/vendors/:/demo-test-suite/config
+      - /config/vendors/:/usr/src/app/config
   crucible:
     networks:
      - proxy-tier
