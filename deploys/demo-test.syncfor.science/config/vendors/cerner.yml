@@ -8,6 +8,12 @@ auth:
   client_id: 1a748dfe-92e1-49cd-8be7-4d23b4bc49d7
   client_secret:
   scope: launch patient/Patient.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
-  launch: 14b02a14-4f43-43b5-8dc6-c4e832f682a0
-
-authorizer: !!python/name:testsuite.oauth.authorize.cerner.CernerAuthorizer
+  steps:
+    - element: "#j_username"
+      send_keys: "ARGONAUT"
+    - element: "#j_password"
+      send_keys: "sprinttest"
+    - element: "#loginButton"
+      click: True
+  extra_launch_params:
+    launch: 14b02a14-4f43-43b5-8dc6-c4e832f682a0

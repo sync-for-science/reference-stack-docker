@@ -5,10 +5,18 @@ api:
 
 auth:
   strategy: authorization_code
-  client_id: 0676eea5-c4c7-4f13-90f1-62405ed2134d
+  client_id: 09de9934-efa8-4832-a6b3-ef4e2b49f490
   # client_secret intentionally included
-  client_secret: 3ntGQa8jEtcedrPX/lk6u083fLCoH96I+p6P2ygjtOqgkZB93eeG25JaEcKi7+HOgnddSQLgyJpve6sZgCYaQw==
+  client_secret: wXsRTs98bImIhoYapKp95A4q0Qdy2thkkfmJpC1fBfDA/OU64MQqesFuLssFGvAumBAJ1oesfYSDe7gPp1/3AQ==
   scope: launch/patient patient/*.read offline_access
   confidential_client: True
-
-authorizer: !!python/name:testsuite.oauth.authorize.allscripts.AllscriptsAuthorizer
+  steps:
+    - element: "[translate='DEFAULT_LOGIN_BUTTON']"
+      click: True
+      optional: True
+    - element: "#UserName"
+      send_keys: "s4s_6-22-16"
+    - element: "#Password"
+      send_keys: "s4s!2345"
+    - element: "[translate='Login_LogIn']"
+      click: True
