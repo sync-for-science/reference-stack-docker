@@ -9,4 +9,11 @@ auth:
   client_secret: demo-secret-s4s
   scope: launch/patient patient/*.read offline_access
   confidential_client: True
-  steps: []
+  steps:
+    - element: '#consent-carousel'
+      execute_script: |
+        $('#consent-carousel')
+          .removeClass('slide')
+          .carousel(5);
+    - element: '#authorize'
+      click: True
