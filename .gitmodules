@@ -6,7 +6,7 @@
 	path = docker-builds/reference-tests
 	url = https://github.com/sync-for-science/demo-test-suite
 [submodule "docker-builds/reference-app/source"]
-	path = docker-builds/reference-app/source
+	path = docker-builds/reference-app
 	url = https://github.com/sync-for-science/reference-research-app
 [submodule "docker-builds/reference-crucible/source/plan_executor"]
 	path = docker-builds/reference-crucible/source/plan_executor

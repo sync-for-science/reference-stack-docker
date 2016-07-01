@@ -1,2 +1,0 @@
-0 0 * * * root fetch_participant_resources /reference-research-app/development.ini >> /var/log/cron.log
-#

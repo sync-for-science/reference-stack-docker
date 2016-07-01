@@ -1,0 +1,70 @@
+---
+class: !!python/name:researchapp.models.participants.Participant
+args: {}
+---
+class: !!python/name:researchapp.models.providers.Organization
+args:
+  id: smart
+  name: Smart
+  url: https://portal.demo-test.syncfor.science/api/fhir/
+---
+class: !!python/name:researchapp.models.providers.Organization
+args:
+  id: allscripts
+  name: Allscripts
+  url: https://uat-fhir.followmyhealth.com/api/
+---
+class: !!python/name:researchapp.models.providers.Organization
+args:
+  id: cerner
+  name: Cerner
+  url: https://fhir.sandboxcernerpowerchart.com/dstu2/d075cf8b-3261-481d-97e5-ba6c48d3b41f/
+---
+class: !!python/name:researchapp.models.providers.Organization
+args:
+  id: epic
+  name: Epic
+  url: https://open-ic.epic.com/Argonaut/api/FHIR/Argonaut/
+---
+class: !!python/name:researchapp.models.providers.OAuthClient
+args:
+  client_id: research-app
+  client_secret: demo-secret-s4s
+  scope: launch/patient patient/*.read offline_access
+  organization_id: smart
+---
+class: !!python/name:researchapp.models.providers.OAuthClient
+args:
+  client_id: 74efd7ee-88d0-47ee-acbe-43775da0922f
+  client_secret: O2DekW7LTkyz9vcupzLy22JjMje0+ZftF3EPnvS3GVlaEe6ZOir2bhNdlp4w9yIT6r1THw1JSsZa0Qf9jkgIlw==
+  scope: launch/patient patient/*.read offline_access
+  organization_id: allscripts
+---
+class: !!python/name:researchapp.models.providers.OAuthClient
+args:
+  client_id: 59c20fa2-3dcc-470d-8f15-689f0de0fe33
+  client_secret: ''
+  scope: launch patient/Patient.read patient/Encounter.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
+  organization_id: cerner
+---
+class: !!python/name:researchapp.models.providers.OAuthClient
+args:
+  client_id: ad3fe986-cbad-4fcc-a487-3e9ee1ef3a4d
+  client_secret: argonaut
+  scope: launch/patient patient/*.read offline_access
+  organization_id: epic
+---
+class: !!python/name:researchapp.models.providers.Practitioner
+args:
+  name: Dr. Smart
+  organization_id: smart
+---
+class: !!python/name:researchapp.models.providers.Practitioner
+args:
+  name: Dr. Allscripts
+  organization_id: allscripts
+---
+class: !!python/name:researchapp.models.providers.Practitioner
+args:
+  name: Dr. Epic
+  organization_id: epic
