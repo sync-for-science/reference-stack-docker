@@ -23,6 +23,8 @@ services:
      - VIRTUAL_PORT=6543
      - LETSENCRYPT_HOST=app.demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
+    volumes:
+      - /config/app/fixtures.yml:/usr/src/app/researchapp/fixtures.yml
   landing:
     networks:
      - proxy-tier
