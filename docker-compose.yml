@@ -16,7 +16,7 @@ services:
       context: ./docker-builds/reference-app
       dockerfile: Dockerfile
     image: syncforscience/reference-app
-    expose: ["6543"]
+    expose: ["5000"]
     networks:
      - internal
   landing:
@@ -40,13 +40,6 @@ services:
       dockerfile: Dockerfile
     image: syncforscience/reference-tests
     expose: ["5000"]
-    networks:
-      - internal
-  crucible:
-    build:
-      context: ./docker-builds/reference-crucible
-      dockerfile: Dockerfile
-    image: syncforscience/reference-crucible
     networks:
       - internal
 
