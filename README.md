@@ -8,6 +8,14 @@ To run it, you need Docker >= 1.10, and docker-compose
 ## Update submodules after git pull
  * `git submodule update --init --recursive`
 
+# Pull or build
+
+Run either one of the following to build the images yourself, or pull them from Docker Hub:
+
+    docker-compose build # build the images yourself
+    # *or* ...
+    docker-compose pull  # pull the images from Docker Hub
+
 # Configure and run locally
 
 Edit `docker-compose.override.yml` as needed to configure your preferred local port mappings, then:
