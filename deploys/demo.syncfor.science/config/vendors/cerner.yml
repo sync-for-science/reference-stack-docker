@@ -8,7 +8,7 @@ auth:
   client_id: 117317b2-0153-4cc4-ba23-fe6ef5eb42d7
   client_secret:
   scope: launch patient/Patient.read patient/Encounter.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
-  steps:
+  sign_in_steps:
     - element: "#j_username"
       send_keys: "ARGONAUT"
     - element: "#j_password"
