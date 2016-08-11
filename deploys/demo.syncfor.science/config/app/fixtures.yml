@@ -35,8 +35,8 @@ args:
 ---
 class: !!python/name:researchapp.models.providers.OAuthClient
 args:
-  client_id: 74efd7ee-88d0-47ee-acbe-43775da0922f
-  client_secret: O2DekW7LTkyz9vcupzLy22JjMje0+ZftF3EPnvS3GVlaEe6ZOir2bhNdlp4w9yIT6r1THw1JSsZa0Qf9jkgIlw==
+  client_id: c9df1d07-f593-4c0f-b14e-581d05602f34
+  client_secret: +1jdM2TZ/yRC10PHLG+5ulYHBvx9Fx2dF19gxtt2hGwPCw+J+Mkr4QtWGSGxsuxyM+hm6Y/EGZVq7UVa09a2ng==
   scope: launch/patient patient/*.read offline_access
   organization_id: allscripts
 ---
