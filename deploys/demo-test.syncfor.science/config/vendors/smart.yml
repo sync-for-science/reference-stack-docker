@@ -9,12 +9,19 @@ auth:
   client_secret: demo-secret-s4s
   scope: launch/patient patient/*.read offline_access
   confidential_client: True
-  steps:
+  sign_in_steps:
     - element: '#sign-in'
       click: True
+  authorize_steps:
     - element: '#consent-carousel'
       execute_script: |
         $('#consent-carousel')
           .carousel(5);
     - element: '#authorize'
+      click: True
+  revoke_url: https://portal.demo-test.syncfor.science/apps
+  revoke_steps:
+    - element: '[rel="test-suite"] button'
+      click: True
+    - element: '.modal form button'
       click: True
