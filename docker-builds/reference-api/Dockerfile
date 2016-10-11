@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y wget bzip2
 RUN mkdir /hapi && \
     cd /hapi && \
-    curl -L https://github.com/jamesagnew/hapi-fhir/releases/download/v1.4/hapi-fhir-1.4-cli.tar.bz2 \
+    curl -L https://github.com/jamesagnew/hapi-fhir/releases/download/v1.6/hapi-fhir-1.6-cli.tar.bz2 \
     | tar -xj
 
 WORKDIR /hapi
