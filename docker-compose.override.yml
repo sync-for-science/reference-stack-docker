@@ -5,10 +5,10 @@ services:
     environment:
      - BASE_URL=http://localhost:9000
     ports:
-     - "9000:80"
+     - "9000:5000"
   app:
     ports:
-     - "9001:80"
+     - "9001:5000"
   api:
     ports:
      - "9002:8080"
