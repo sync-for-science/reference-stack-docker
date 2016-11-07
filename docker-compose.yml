@@ -42,6 +42,14 @@ services:
     expose: ["5000"]
     networks:
       - internal
+  research-app-api:
+    build:
+      context: ./docker-builds/research-app-api
+      dockerfile: Dockerfile
+    image: syncforscience/research-app-api
+    expose: ["5000"]
+    networks:
+     - internal
 
   tasks:
     build:

@@ -11,3 +11,6 @@
 [submodule "docker-builds/reference-smart/source"]
 	path = docker-builds/reference-smart
 	url = https://github.com/sync-for-science/auth-proxy.git
+[submodule "docker-builds/research-app-api"]
+	path = docker-builds/research-app-api
+	url = git@github.com:sync-for-science/research-app-api.git
