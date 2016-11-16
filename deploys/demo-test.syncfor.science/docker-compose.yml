@@ -47,6 +47,7 @@ services:
      - LETSENCRYPT_HOST=tests.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
+      - tests.sqlite:/usr/src/app/testsuite/db.sqlite3
       - /config/vendors/:/usr/src/app/config
 
 networks:
@@ -57,3 +58,4 @@ networks:
 volumes:
   derby: {}
   db.sqlite: {}
+  tests.sqlite: {}
