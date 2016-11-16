@@ -48,6 +48,7 @@ services:
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
      - ES_URL=https://search-s4s-logs-xsjsafiwd7vkpiucmjqmdjkp7y.us-west-2.es.amazonaws.com/test-suite/log/
     volumes:
+      - tests.sqlite:/usr/src/app/testsuite/db.sqlite3
       - /config/vendors/:/usr/src/app/config
 
 networks:
@@ -58,3 +59,4 @@ networks:
 volumes:
   derby: {}
   db.sqlite: {}
+  tests.sqlite: {}
