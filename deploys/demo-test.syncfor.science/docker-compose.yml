@@ -12,7 +12,7 @@ services:
      - LETSENCRYPT_HOST=portal.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
-      - db.sqlite:/usr/src/app/db.sqlite
+      - smart.db:/usr/src/app/auth_proxy/db
       - /config/smart/fixtures.yml:/usr/src/app/auth_proxy/fixtures.yml
   app:
     networks:
@@ -47,7 +47,7 @@ services:
      - LETSENCRYPT_HOST=tests.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
-      - tests.sqlite:/usr/src/app/testsuite/db.sqlite3
+      - tests.db:/usr/src/app/testsuite/db
       - /config/vendors/:/usr/src/app/config
 
 networks:
@@ -57,5 +57,5 @@ networks:
 
 volumes:
   derby: {}
-  db.sqlite: {}
-  tests.sqlite: {}
+  smart.db: {}
+  tests.db: {}
