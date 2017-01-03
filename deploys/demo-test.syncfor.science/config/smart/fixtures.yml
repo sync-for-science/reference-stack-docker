@@ -2,20 +2,33 @@
 class: !!python/name:auth_proxy.models.user.User
 args:
   patient_id: smart-1288992
-  username: demo-smart-user
+  username: david-jones
   password: demo-password
-
+  name: David Jones
 ---
 class: !!python/name:auth_proxy.models.oauth.Client
 args:
   client_id: test-suite
   client_secret: demo-secret-s4s
+  name: S4S Test Suite
   _redirect_uris: https://tests.demo-test.syncfor.science/authorized/
   _default_scopes: launch/patient patient/*.read offline_access
+  _security_labels: patient medications allergies immunizations problems procedures vital-signs laboratory smoking
 ---
 class: !!python/name:auth_proxy.models.oauth.Client
 args:
   client_id: research-app
   client_secret: demo-secret-s4s
+  name: All of Us Research Program
   _redirect_uris: https://app.demo-test.syncfor.science/authorized
   _default_scopes: launch/patient patient/*.read offline_access
+  _security_labels: patient medications allergies immunizations problems procedures vital-signs laboratory smoking
+---
+class: !!python/name:auth_proxy.models.oauth.Client
+args:
+  client_id: api-test
+  client_secret: api-secret
+  name: All of Us Research Program
+  _redirect_uris: https://app.demo-test.syncfor.science/authorized http://s4s.tomwschneider.com/authorized
+  _default_scopes: launch/patient patient/*.read offline_access
+  _security_labels: patient medications allergies immunizations problems procedures vital-signs laboratory smoking
