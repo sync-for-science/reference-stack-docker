@@ -15,3 +15,6 @@ services:
   tests:
     ports:
      - "9003:5000"
+  research-app-api:
+    ports:
+     - "9005:5000"
