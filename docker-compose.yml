@@ -50,6 +50,8 @@ services:
     expose: ["5000"]
     networks:
      - internal
+    entrypoint: ""
+    command: "./runserver.sh"
 
   tasks:
     build:
