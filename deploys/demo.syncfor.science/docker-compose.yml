@@ -47,6 +47,7 @@ services:
      - LETSENCRYPT_HOST=demo.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
   api:
+    restart: always
     volumes:
      - derby:/hapi/target
   tests:
