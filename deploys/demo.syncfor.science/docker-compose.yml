@@ -36,6 +36,7 @@ services:
       - LETSENCRYPT_HOST=sync-api.demo.syncfor.science
       - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
+      - research-app.db:/usr/src/app/research_app/db
       - /config/research-app-api/providers.yml:/usr/src/app/providers.yml
   landing:
     networks:
@@ -71,5 +72,6 @@ networks:
 
 volumes:
   derby: {}
+  research-app.db: {}
   smart.db: {}
   tests.db: {}
