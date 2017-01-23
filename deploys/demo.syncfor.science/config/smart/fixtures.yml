@@ -1,10 +1,38 @@
 ---
 class: !!python/name:auth_proxy.models.user.User
 args:
-  patient_id: smart-1288992
-  username: david-jones
+  id: 1
+  username: daniel-adams
   password: demo-password
-  name: David Jones
+  name: Daniel Adams
+---
+class: !!python/name:auth_proxy.models.user.User
+args:
+  id: 2
+  username: joseph-ross
+  password: demo-password
+  name: Joseph Ross
+---
+class: !!python/name:auth_proxy.models.user.Patient
+args:
+  user_id: 1
+  patient_id: smart-1288992
+  name: Daniel Adams
+  is_user: True
+---
+class: !!python/name:auth_proxy.models.user.Patient
+args:
+  user_id: 1
+  patient_id: smart-1032702
+  name: Amy Shaw
+  is_user: False
+---
+class: !!python/name:auth_proxy.models.user.Patient
+args:
+  user_id: 2
+  patient_id: smart-1081332
+  name: Joseph Ross
+  is_user: True
 ---
 class: !!python/name:auth_proxy.models.oauth.Client
 args:
