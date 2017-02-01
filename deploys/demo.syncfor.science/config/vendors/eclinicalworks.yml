@@ -18,5 +18,19 @@ auth:
     - element: '#btnSubmit'
       click: True
   authorize_steps:
+    - element: '.btn-primary'
+      click: True
+    - element: '#confirmation-item div.form-group:nth-child(1) input[type="checkbox"]'
+      click: True
+    - element: '#confirmation-item div.form-group:nth-child(3) input[type="checkbox"]'
+      click: True
+    - element: '#confirmation-item div.form-group:nth-child(5) input[type="checkbox"]'
+      click: True
+    - element: '#confirmation-item div.form-group:nth-child(7) input[type="checkbox"]'
+      click: True
+    - element: '#confirmation-item div.form-group:nth-child(9) .col-xs-2 input[type="checkbox"]'
+      click: True
+    - element: '.btn-before-approve'
+      click: True
     - element: '#grant_clicked'
       click: True
