@@ -24,8 +24,6 @@ services:
      - LETSENCRYPT_HOST=app.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
      - SYNCHRONIZER_HOST=https://sync-api.demo-test.syncfor.science
-    volumes:
-      - /config/app/fixtures.yml:/usr/src/app/researchapp/fixtures.yml
   research-app-api:
     networks:
       - proxy-tier

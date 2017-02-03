@@ -3,5 +3,29 @@
   client_id: api-test
   client_secret: api-secret
   scope: patient/*.read offline_access
-  fhir_url: https://portal.demo-test.syncfor.science/api/fhir/
-  redirect_uri: https://app.demo-test.syncfor.science/authorized
+  fhir_url: http://proxy.dev.syncfor.science:9000/api/fhir/
+  redirect_uri: http://app.dev.syncfor.science:9001/authorized
+- name: Epic
+  client_id: 94bdc785-64af-4e7e-87be-b7a285e9c1d6
+  client_secret: Argonaut
+  scope: patient/*.read offline_access
+  fhir_url: https://open-ic.epic.com/Argonaut/api/FHIR/Argonaut/
+  redirect_uri: http://app.dev.syncfor.science:9001/authorized
+- name: Allscripts
+  client_id: 74efd7ee-88d0-47ee-acbe-43775da0922f
+  client_secret: O2DekW7LTkyz9vcupzLy22JjMje0+ZftF3EPnvS3GVlaEe6ZOir2bhNdlp4w9yIT6r1THw1JSsZa0Qf9jkgIlw==
+  scope: patient/*.read offline_access
+  fhir_url: https://uat-fhir.followmyhealth.com/api/
+  redirect_uri: http://app.dev.syncfor.science:9001/authorized
+- name: eClinicalWorks
+  client_id: c0c7c76d30bd3dcaefc96f40275bdc0a
+  client_secret: f9d08bf18de3ea87603c54ee50fbc495
+  fhir_url: https://fhir-sandbox.healow.com/apps/api/v1/fhir/
+  scope: patient/*.read offline_access
+  redirect_uri: http://app.dev.syncfor.science:9001/authorized
+- name: Cerner
+  client_id: b3aaf919-b9ff-4a19-a73e-2ffae6c00efa
+  client_secret:
+  fhir_url: https://fhir.sandboxcernerpowerchart.com/dstu2/d075cf8b-3261-481d-97e5-ba6c48d3b41f/
+  scope: patient/Patient.read patient/Encounter.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
+  redirect_uri: http://app.dev.syncfor.science:9001/authorized
