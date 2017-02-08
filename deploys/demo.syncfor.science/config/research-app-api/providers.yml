@@ -24,8 +24,8 @@
   scope: patient/*.read offline_access
   redirect_uri: https://app.demo.syncfor.science/authorized
 - name: Cerner
-  client_id: b3aaf919-b9ff-4a19-a73e-2ffae6c00efa
+  client_id: 50076c5f-5a4d-4291-ab67-dd6bb991afb6
   client_secret:
-  fhir_url: https://fhir.sandboxcernerpowerchart.com/dstu2/d075cf8b-3261-481d-97e5-ba6c48d3b41f/
+  fhir_url: https://fhir-ehr.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/
   scope: patient/Patient.read patient/Encounter.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
   redirect_uri: https://app.demo.syncfor.science/authorized
