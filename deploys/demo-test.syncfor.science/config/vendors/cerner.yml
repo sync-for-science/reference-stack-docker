@@ -1,19 +1,19 @@
 ---
 api:
-  url: https://fhir.sandboxcernerpowerchart.com/dstu2/d075cf8b-3261-481d-97e5-ba6c48d3b41f/
+  url: https://fhir-ehr.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/
   patient: 1316024
 
 auth:
   strategy: authorization_code
-  client_id: 1a748dfe-92e1-49cd-8be7-4d23b4bc49d7
+  client_id: 6f8a7cf5-6544-4af5-9cdb-d4f204b9b755
   client_secret:
   scope: launch patient/Patient.read patient/Encounter.read patient/Observation.read patient/Condition.read patient/MedicationOrder.read patient/MedicationStatement.read patient/MedicationDispense.read patient/MedicationAdministration.read patient/AllergyIntolerance.read patient/Procedure.read patient/Immunization.read patient/DocumentReference.read online_access
   sign_in_steps:
     - element: "#j_username"
-      send_keys: "ARGONAUT"
+      send_keys: "portal"
     - element: "#j_password"
-      send_keys: "sprinttest"
+      send_keys: "portal"
     - element: "#loginButton"
       click: True
   extra_launch_params:
-    launch: 14b02a14-4f43-43b5-8dc6-c4e832f682a0
+    launch: b74cb586-3f88-42d7-8fdc-cd7bee841ac2
