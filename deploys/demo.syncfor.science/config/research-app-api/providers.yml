@@ -12,8 +12,8 @@
   fhir_url: https://open-ic.epic.com/Argonaut/api/FHIR/Argonaut/
   redirect_uri: https://app.demo.syncfor.science/authorized
 - name: Allscripts
-  client_id: 74efd7ee-88d0-47ee-acbe-43775da0922f
-  client_secret: O2DekW7LTkyz9vcupzLy22JjMje0+ZftF3EPnvS3GVlaEe6ZOir2bhNdlp4w9yIT6r1THw1JSsZa0Qf9jkgIlw==
+  client_id: a1019f1e-1401-4d15-b7ee-a3d3635419fd
+  client_secret: sFhnJIJwQaXWzF5d4aLmfxtXsdZdBCsiIsWONQq8YTaoXgdhcHU2dTibw/drsSjZ+G82CbAYVfTFIVR/0OhWJw==
   scope: patient/*.read offline_access
   fhir_url: https://uat-fhir.followmyhealth.com/api/
   redirect_uri: https://app.demo.syncfor.science/authorized
