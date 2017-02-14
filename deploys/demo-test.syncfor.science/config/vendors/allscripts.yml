@@ -1,13 +1,13 @@
 ---
 api:
-  url: https://apis-dev.followmyhealth.com/fhir-mu-certification/api/
-  patient: 8501fd7d-4f46-4eca-a5c0-a5fd0112fe85
+  url: https://apis-test.followmyhealth.com/fhir-uat/api/
+  patient: 3dcfa065-5a1e-4577-aa04-a719013f736b
 
 auth:
   strategy: authorization_code
-  client_id: 09de9934-efa8-4832-a6b3-ef4e2b49f490
+  client_id: 90d4ed27-4790-4a3e-80c2-436d1942d680
   # client_secret intentionally included
-  client_secret: wXsRTs98bImIhoYapKp95A4q0Qdy2thkkfmJpC1fBfDA/OU64MQqesFuLssFGvAumBAJ1oesfYSDe7gPp1/3AQ==
+  client_secret: Ym0ZYTtSjrQM7ZqLfkMKuj1exRmuIKbBCQR+HDoDQgtEb4ZiDhyE1dDk9S3h2vfMRdxvzV18KMhv7Fz0dPiP6w==
   scope: launch/patient patient/*.read offline_access
   confidential_client: True
   sign_in_steps:
@@ -15,13 +15,14 @@ auth:
       click: True
       optional: True
     - element: "#UserName"
-      send_keys: "s4s_6-22-16"
+      send_keys: "floppyrobot10"
     - element: "#Password"
-      send_keys: "s4s!2345"
+      send_keys: "s4s_pilot!"
     - element: "[translate='Login_LogIn']"
       click: True
   authorize_steps:
     - element: "#permission-component"
+      wait: 10
       optional: True
       execute_script: |
         Array.from(document
@@ -33,8 +34,8 @@ auth:
     - element: "span:first-child button"
       optional: True
       click: True
-      wait: 1
-  revoke_url: https://fmhmuauthcertification.azurewebsites.net/api/Removal
+  revoke_url: https://mutestcertification.azurewebsites.net/api/Removal
   revoke_steps:
-    - element: 'button.removal-button[data-client-id="0c9cc532-9ac5-48cf-998e-3b9da5394b55"]'
+    - element: 'button.removal-button[data-client-id="90d4ed27-4790-4a3e-80c2-436d1942d680"]'
       click: True
+      wait: 10
