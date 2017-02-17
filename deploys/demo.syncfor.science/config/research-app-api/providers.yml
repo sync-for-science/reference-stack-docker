@@ -18,9 +18,9 @@
   fhir_url: https://uat-fhir.followmyhealth.com/api/
   redirect_uri: https://app.demo.syncfor.science/authorized
 - name: eClinicalWorks
-  client_id: c0c7c76d30bd3dcaefc96f40275bdc0a
-  client_secret: f9d08bf18de3ea87603c54ee50fbc495
-  fhir_url: https://fhir-sandbox.healow.com/apps/api/v1/fhir/
+  client_id: 9a1158154dfa42caddbd0694a4e9bdc8
+  client_secret: 8a093f6b3f64a67d0c4baee17994e0f5
+  fhir_url: http://52.22.98.192:8080/FHIRServer/fhir/HEFBCA/
   scope: patient/*.read offline_access
   redirect_uri: https://app.demo.syncfor.science/authorized
 - name: Cerner
