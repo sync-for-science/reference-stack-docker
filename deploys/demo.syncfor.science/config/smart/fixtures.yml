@@ -39,7 +39,7 @@ args:
   client_id: test-suite
   client_secret: demo-secret-s4s
   name: S4S Test Suite
-  _redirect_uris: https://tests.demo.syncfor.science/authorized/
+  _redirect_uris: https://tests.demo.syncfor.science/authorized/ https://test-suite.pilot-prep.syncfor.science/authorized/
   _default_scopes: launch/patient patient/*.read offline_access
   _security_labels: patient medications allergies immunizations problems procedures vital-signs laboratory smoking
 ---
