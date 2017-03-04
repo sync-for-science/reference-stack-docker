@@ -55,6 +55,7 @@ services:
      - VIRTUAL_HOST=tests.demo-test.syncfor.science
      - VIRTUAL_NETWORK=nginx-proxy
      - VIRTUAL_PORT=5000
+     - BASE_URL=https://tests.demo-test.syncfor.science
      - LETSENCRYPT_HOST=tests.demo-test.syncfor.science
      - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
     volumes:
