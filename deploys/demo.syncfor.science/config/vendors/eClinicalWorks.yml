@@ -20,17 +20,17 @@ auth:
   authorize_steps:
     - element: '.btn-primary'
       click: True
-    - element: '#confirmation-item div.form-group:nth-child(1) input[type="checkbox"]'
+    - element: '#confirmation-item form > div:nth-child(1) label'
       click: True
-    - element: '#confirmation-item div.form-group:nth-child(3) input[type="checkbox"]'
+    - element: '#confirmation-item form > div:nth-child(3) label'
       click: True
-    - element: '#confirmation-item div.form-group:nth-child(5) input[type="checkbox"]'
+    - element: '#confirmation-item form > div:nth-child(5) label'
       click: True
-    - element: '#confirmation-item div.form-group:nth-child(7) input[type="checkbox"]'
+    - element: '#confirmation-item form > div:nth-child(7) label'
       click: True
-    - element: '#confirmation-item div.form-group:nth-child(9) .col-xs-2 input[type="checkbox"]'
+    - element: '#confirmation-item form > div:nth-child(9) label'
       click: True
-    - element: '.btn-before-approve'
+    - element: 'button.btn-before-approve'
       click: True
-    - element: '#grant_clicked'
+    - element: 'button.btn_approve'
       click: True
