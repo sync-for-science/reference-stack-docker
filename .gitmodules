@@ -5,12 +5,20 @@
 [submodule "docker-builds/reference-tests/source"]
 	path = docker-builds/reference-tests
 	url = https://github.com/sync-for-science/demo-test-suite
+	branch = master
 [submodule "docker-builds/reference-app/source"]
 	path = docker-builds/reference-app
 	url = https://github.com/sync-for-science/reference-research-app
+	branch = master
 [submodule "docker-builds/reference-smart/source"]
 	path = docker-builds/reference-smart
 	url = https://github.com/sync-for-science/auth-proxy.git
+	branch = master
 [submodule "docker-builds/research-app-api"]
 	path = docker-builds/research-app-api
 	url = https://github.com/sync-for-science/research-app-api.git
+	branch = master
+[submodule "docker-builds/token-introspector"]
+	path = docker-builds/token-introspector
+	url = https://github.com/sync-for-science/token-introspector
+	branch = master

@@ -52,7 +52,16 @@ services:
      - internal
     entrypoint: ""
     command: "./runserver.sh"
-
+  token-introspector:
+    build:
+      context: ./docker-builds/token-introspector
+      dockerfile: Dockerfile
+    image: syncforscience/token-introspector
+    expose: ["5000"]
+    environment:
+     - API_SERVER=http://smart:5000/api/fhir
+    networks:
+     - internal
   tasks:
     build:
       context: ./docker-builds/reference-tasks

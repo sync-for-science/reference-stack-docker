@@ -7,6 +7,8 @@ services:
     ports:
      - "9000:5000"
   app:
+    environment:
+     - SYNCHRONIZER_HOST=http://research-app-api:5000
     ports:
      - "9001:5000"
   api:
@@ -15,6 +17,9 @@ services:
   tests:
     ports:
      - "9003:5000"
+  token-introspector:
+    ports:
+     - "9004:5000"
   research-app-api:
     ports:
      - "9005:5000"
