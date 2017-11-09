@@ -29,3 +29,6 @@ auth:
   cancel_steps:
     - element: '#consent-carousel .btn-default'
       click: True
+
+version:
+  tags: DSTU2
