@@ -18,8 +18,8 @@ auth:
     - element: "input[type='submit']"
       click: True
   authorize_steps:
-    - element: "input[value='Approve Access']"
-      execute_script: $("input[value='Approve Access']").click()
+    - element: "input[value='Approve']"
+      execute_script: $("input[value='Approve']").click()
   cancel_steps:
     - element: "button.deny"
       click: True
