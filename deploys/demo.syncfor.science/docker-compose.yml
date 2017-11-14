@@ -28,7 +28,7 @@ services:
      - ENABLE_UNSECURE_FHIR=True
     volumes:
       - smart-stu3.db:/usr/src/app/auth_proxy/db
-      - /config/smart/fixtures-stu3.yml:/usr/src/app/auth_proxy/fixtures.yml
+      - /config/smart/fixtures.yml:/usr/src/app/auth_proxy/fixtures.yml
   app:
     networks:
      - proxy-tier
