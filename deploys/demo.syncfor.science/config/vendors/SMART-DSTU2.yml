@@ -30,5 +30,4 @@ auth:
     - element: '#consent-carousel .btn-default'
       click: True
 
-version:
-  tags: DSTU2
+version: DSTU2

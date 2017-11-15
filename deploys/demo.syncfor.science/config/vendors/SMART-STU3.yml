@@ -30,5 +30,4 @@ auth:
     - element: '#consent-carousel .btn-default'
       click: True
 
-version:
-  tags: STU3
+version: STU3

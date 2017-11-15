@@ -35,5 +35,4 @@ auth:
     - element: 'button.btn_approve'
       click: True
 
-version:
-  tags: DSTU2
+version: DSTU2

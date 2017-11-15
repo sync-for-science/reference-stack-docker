@@ -40,5 +40,4 @@ auth:
       click: True
       wait: 10
 
-version:
-  tags: DSTU2
+version: DSTU2

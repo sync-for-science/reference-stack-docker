@@ -28,5 +28,4 @@ auth:
     - element: "[title~=test][value~=Remove]"
       click: True
 
-version:
-  tags: STU3
+version: STU3
