@@ -25,7 +25,3 @@
 [submodule "docker-builds/reference-tasks/sample-patients-stu3"]
 	path = docker-builds/reference-tasks/sample-patients-stu3
 	url = https://github.com/sync-for-science/sample-patients-stu3
-[submodule "docker-builds/reference-tests-stu3"]
-	path = docker-builds/reference-tests-stu3
-	url = https://github.com/sync-for-science/test-suite/
-	branch = stu3
