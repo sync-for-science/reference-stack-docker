@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Waiting for FHIR server..."
+while ! nc -z api-stu3 8080; do
+  sleep 0.5
+done
+echo "Found FHIR server! Creating data..."
+
+cd patients-stu3
+
+curl -H "Content-type: application/json+fhir" -X POST -d @patient-1288992.fhir-bundle.json http://api-stu3:8080/baseDstu3/
+
+for x in `ls *.json | head -n 10`; do
+  curl -H "Content-type: application/json+fhir" -X POST -d @$x http://api-stu3:8080/baseDstu3/
+done
+
+echo "Created data!"

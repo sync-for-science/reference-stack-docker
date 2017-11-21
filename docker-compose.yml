@@ -11,6 +11,16 @@ services:
     expose: ["5000"]
     networks:
      - internal
+  smart-stu3:
+    build:
+      context: ./docker-builds/reference-smart
+      dockerfile: Dockerfile
+    image: syncforscience/reference-smart
+    environment:
+     - API_SERVER=http://api-stu3:8080/baseDstu3
+    expose: ["5000"]
+    networks:
+     - internal
   app:
     build:
       context: ./docker-builds/reference-app
@@ -34,11 +44,21 @@ services:
     image: syncforscience/reference-api
     networks:
      - internal
+  api-stu3:
+    build:
+      context: ./docker-builds/reference-api-stu3
+      dockerfile: Dockerfile
+    image: syncforscience/reference-api-stu3
+    networks:
+     - internal
   tests:
     build:
       context: ./docker-builds/reference-tests
       dockerfile: Dockerfile
     image: syncforscience/reference-tests
+    environment:
+     - API_SERVER_DSTU2=http://api:8080/baseDstu2
+     - API_SERVER_STU3=http://api-stu3:8080/baseDstu3
     expose: ["5000"]
     networks:
       - internal

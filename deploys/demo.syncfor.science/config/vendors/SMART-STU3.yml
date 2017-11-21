@@ -1,6 +1,6 @@
 ---
 api:
-  url: https://portal.demo.syncfor.science/api/fhir/
+  url: https://portal-stu3.demo.syncfor.science/api/fhir/
 
 auth:
   strategy: authorization_code
@@ -29,3 +29,5 @@ auth:
   cancel_steps:
     - element: '#consent-carousel .btn-default'
       click: True
+
+version: STU3

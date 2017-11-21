@@ -22,3 +22,6 @@
 	path = docker-builds/token-introspector
 	url = https://github.com/sync-for-science/token-introspector
 	branch = master
+[submodule "docker-builds/reference-tasks/sample-patients-stu3"]
+	path = docker-builds/reference-tasks/sample-patients-stu3
+	url = https://github.com/sync-for-science/sample-patients-stu3

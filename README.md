@@ -21,16 +21,21 @@ Run either one of the following to build the images yourself, or pull them from 
 Edit `docker-compose.override.yml` as needed to configure your preferred local port mappings, then:
 
  * `docker-compose up`: launch the stack
- * `docker-compose  run tasks load-sample-data`: load sample data
+ * `docker-compose  run tasks load-sample-data-stu2`: load sample data for stu2
+ * `docker-compose  run tasks load-sample-data-stu3`: load sample data for stu3
 
 Now `curl http://localhost:9000/api/fhir/Patient?` should return sample data!
 
 By default, you'll have servers running at ports:
 
  * `9000`: SMART EHR server
+ * `9006`: SMART EHR server (Pointing at HAPI FHIR server version STU3)
  * `9001`: Demo app server
  * `9002`: For debugging only, the internal HAPI FHIR server
+ * `9007`: For debugging only, the internal HAPI FHIR server (STU3)
  * `9003`: For testing only, the test suite client
+ * `9008`: For testing only, the test suite client (STU3)
+
 
 ## Update submodules to latest on GH branches
  * `git submodule update --remote`

@@ -4,8 +4,19 @@ services:
   smart:
     environment:
      - BASE_URL=http://localhost:9000
+     - ENABLE_UNSECURE_FHIR=True
     ports:
      - "9000:5000"
+    networks:
+     internal:
+      aliases:
+       - localhost
+  smart-stu3:
+    environment:
+     - BASE_URL=http://localhost:9006
+     - ENABLE_UNSECURE_FHIR=True
+    ports:
+     - "9006:5000"
   app:
     environment:
      - SYNCHRONIZER_HOST=http://research-app-api:5000
@@ -14,9 +25,15 @@ services:
   api:
     ports:
      - "9002:8080"
+  api-stu3:
+    ports:
+     - "9007:8080"
   tests:
     ports:
      - "9003:5000"
+  tests-stu3:
+    ports:
+     - "9008:5000"
   token-introspector:
     ports:
      - "9004:5000"

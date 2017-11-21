@@ -6,7 +6,7 @@ while ! nc -z api 8080; do
 done
 echo "Found FHIR server! Creating data..."
 
-cd patients
+cd  patients-stu2
 
 for x in `ls *.xml | head -n 10`; do
   curl -H "Content-type: application/xml+fhir" -X POST -d @$x http://api:8080/baseDstu2/
