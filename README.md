@@ -34,7 +34,6 @@ By default, you'll have servers running at ports:
  * `9002`: For debugging only, the internal HAPI FHIR server
  * `9007`: For debugging only, the internal HAPI FHIR server (STU3)
  * `9003`: For testing only, the test suite client
- * `9008`: For testing only, the test suite client (STU3)
 
 
 ## Update submodules to latest on GH branches
