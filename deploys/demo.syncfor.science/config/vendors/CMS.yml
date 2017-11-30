@@ -7,7 +7,7 @@ api:
 
 use_cases:
   security: STU3
-  ehr: STU3
+  financial: STU3
 
 auth:
   versions:
