@@ -1,38 +1,44 @@
 ---
 api:
-  url: http://52.22.98.192:8080/FHIRServer/fhir/HEFBCA/
-  patient: 9118
+  versions:
+    DSTU2:
+      url: http://52.22.98.192:8080/FHIRServer/fhir/HEFBCA/
+      patient: 9118
+
+use_cases:
+  security: DSTU2
+  ehr: DSTU2
 
 auth:
-  strategy: authorization_code
-  client_id: "f457c545a9ded88f18ecee47145a72c0"
-  # client_secret intentionally included
-  client_secret: "7f3c64dc0419d2bf43f91e532430bfdc"
-  scope: launch/patient patient/*.read offline_access
-  confidential_client: True
-  sign_in_steps:
-    - element: '#uname'
-      send_keys: 'user2'
-    - element: '#password'
-      send_keys: 'Password2'
-    - element: '#btnSubmit'
-      click: True
-  authorize_steps:
-    - element: '.btn-primary'
-      click: True
-    - element: '#confirmation-item form > div:nth-child(1) label'
-      click: True
-    - element: '#confirmation-item form > div:nth-child(3) label'
-      click: True
-    - element: '#confirmation-item form > div:nth-child(5) label'
-      click: True
-    - element: '#confirmation-item form > div:nth-child(7) label'
-      click: True
-    - element: '#confirmation-item form > div:nth-child(9) label'
-      click: True
-    - element: 'button.btn-before-approve'
-      click: True
-    - element: 'button.btn_approve'
-      click: True
-
-version: DSTU2
+  versions:
+    DSTU2:
+      strategy: authorization_code
+      client_id: "f457c545a9ded88f18ecee47145a72c0"
+      # client_secret intentionally included
+      client_secret: "7f3c64dc0419d2bf43f91e532430bfdc"
+      scope: launch/patient patient/*.read offline_access
+      confidential_client: True
+      sign_in_steps:
+        - element: '#uname'
+          send_keys: 'user2'
+        - element: '#password'
+          send_keys: 'Password2'
+        - element: '#btnSubmit'
+          click: True
+      authorize_steps:
+        - element: '.btn-primary'
+          click: True
+        - element: '#confirmation-item form > div:nth-child(1) label'
+          click: True
+        - element: '#confirmation-item form > div:nth-child(3) label'
+          click: True
+        - element: '#confirmation-item form > div:nth-child(5) label'
+          click: True
+        - element: '#confirmation-item form > div:nth-child(7) label'
+          click: True
+        - element: '#confirmation-item form > div:nth-child(9) label'
+          click: True
+        - element: 'button.btn-before-approve'
+          click: True
+        - element: 'button.btn_approve'
+          click: True
