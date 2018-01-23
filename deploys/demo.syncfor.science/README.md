@@ -30,6 +30,17 @@ docker-compose \
   -f deploys/demo.syncfor.science/nginx-ssl-proxy/docker-compose.yml \
   up -d
 ```
+### Load the data
+
+```
+docker-compose \
+  -f docker-compose.yml -f deploys/demo.syncfor.science/docker-compose.yml \
+  run tasks load-sample-data-stu2
+
+docker-compose \
+  -f docker-compose.yml -f deploys/demo.syncfor.science/docker-compose.yml \
+  run tasks load-sample-data-stu3
+```
 
 ### See it in action
 
