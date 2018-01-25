@@ -57,6 +57,6 @@ args:
   client_id: api-test
   client_secret: api-secret
   name: All of Us Research Program
-  _redirect_uris: https://app.demo.syncfor.science/authorized http://s4s.tomwschneider.com/authorized https://demo-app.pilot-prep.syncfor.science/authorized
+  _redirect_uris: https://app.demo.syncfor.science/authorized https://demo-app.pilot-prep.syncfor.science/authorized https://pmistagingapi.joinallofus.org/api/EHRAuthCallback https://stableapi.joinallofus.org/api/EHRAuthCallback
   _default_scopes: launch/patient patient/*.read offline_access
   _security_labels: patient medications allergies immunizations problems procedures vital-signs laboratory smoking
