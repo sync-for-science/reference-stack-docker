@@ -10,7 +10,9 @@ services:
         - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
         - LETSENCRYPT_TEST=false
       ports:
-         - "8080:8080"
+        - "8080:8080"
+      networks:
+        - proxy-tier
 
 networks:
   proxy-tier:
