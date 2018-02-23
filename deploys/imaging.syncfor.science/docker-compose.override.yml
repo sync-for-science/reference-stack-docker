@@ -8,7 +8,7 @@ services:
         - VIRTUAL_PORT=8080
         - LETSENCRYPT_HOST=broker.demo.syncfor.science
         - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
-        - LETSENCRYPT_TEST=true
+        - LETSENCRYPT_TEST=false
       ports:
          - "8080:8080"
 
