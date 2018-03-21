@@ -64,6 +64,10 @@ services:
     restart: always
     volumes:
      - derby:/hapi/target
+  api-stu3:
+    restart: always
+    volumes:
+     - derby-stu3:/hapi/target
   tests:
     networks:
      - proxy-tier
@@ -85,6 +89,7 @@ networks:
 
 volumes:
   derby: {}
+  derby-stu3: {}
   research-app.db: {}
   smart.db: {}
   smart-stu3.db: {}
