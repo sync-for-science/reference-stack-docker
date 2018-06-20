@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+   s4s-fhir-broker:
+      environment:
+        - VIRTUAL_HOST=broker.imaging.syncfor.science
+        - VIRTUAL_NETWORK=nginx-proxy
+        - VIRTUAL_PORT=8080
+        - LETSENCRYPT_HOST=broker.imaging.syncfor.science
+        - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
+        - LETSENCRYPT_TEST=false
+      ports:
+        - "8080:8080"
+      networks:
+        - proxy-tier
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy

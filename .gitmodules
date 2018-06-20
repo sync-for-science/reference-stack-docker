@@ -25,3 +25,6 @@
 [submodule "docker-builds/reference-tasks/sample-patients-stu3"]
 	path = docker-builds/reference-tasks/sample-patients-stu3
 	url = https://github.com/sync-for-science/sample-patients-stu3
+[submodule "reference-imaging"]
+	path = docker-builds/reference-imaging
+	url = https://github.com/RSNA/s4s-stack
