@@ -1,12 +1,12 @@
 # Docker reference stack
 
-This repository provides a [https://www.docker.com/](Docker)-based technology stack, comprised of many components which together emulate a research application and an electronic health record vendor. These components can be used as reference implementations for developers who wish to develop a research application that consumes electronic health record data from participants, or for EHR vendors who are exploring implementing the [https://smarthealthit.org/](SMART Health IT platform).
+This repository provides a [Docker](https://www.docker.com/)-based technology stack, comprised of many components which together emulate a research application and an electronic health record vendor. These components can be used as reference implementations for developers who wish to develop a research application that consumes electronic health record data from participants, or for EHR vendors who are exploring implementing the [SMART Health IT platform](https://smarthealthit.org/).
 
 ## Getting started
 
-### Clone the repository
+### Cloning the repository
 
-The stack makes heavy use of [https://git-scm.com/docs/git-submodule](git submodules), so one extra step is required:
+The stack makes heavy use of [git submodules](https://git-scm.com/docs/git-submodule), so one extra step is required:
 
     $ git clone https://github.com/sync-for-science/reference-stack-docker
     ...
@@ -16,7 +16,7 @@ The stack makes heavy use of [https://git-scm.com/docs/git-submodule](git submod
 
 ### Running the stack
 
-We use [https://docs.docker.com/compose/](Docker Compose) to orchestrate all the components, so starting the entire stack is simple:
+We use [Docker Compose](https://docs.docker.com/compose/) to orchestrate all the components, so starting the entire stack is simple:
 
     $ docker-compose up
     ...
@@ -44,11 +44,11 @@ This list shows all services and interfaces included in the reference stack, alo
 
 #### HAPI-FHIR servers (`api`/`api-stu3`)
 
-[http://hapifhir.io/](HAPI-FHIR) is an implementation of the FHIR specification written in Java. We include both STU2 and DSTU3 FHIR servers, which provide the base FHIR functionality for the stack.
+[HAPI-FHIR](http://hapifhir.io/) is an implementation of the FHIR specification written in Java. We include both STU2 and DSTU3 FHIR servers, which provide the base FHIR functionality for the stack.
 
 #### SMART on FHIR (`smart`/`smart-stu3`)
 
-We provide a layer that sits on top of the HAPI-FHIR servers and provides some of the functionality prescribed by [http://docs.smarthealthit.org/](SMART on FHIR). This layer acts as an EHR vendor's interface, where a participant would be directed to in order to log into the vendor's site and consent to providing a research application with access to their data.
+We provide a layer that sits on top of the HAPI-FHIR servers and provides some of the functionality prescribed by [SMART on FHIR](http://docs.smarthealthit.org/). This layer acts as an EHR vendor's patient-facing interface, where a participant would be directed to in order to log into the vendor's site and consent to providing a research application with access to their data.
 
 Configuration options in `docker-compose.override.yml`:
  * `BASE_URL`: This should be set to the URL that the service is being accessed by, which is either `http://localhost:9000`/`http://localhost:9006` when a human is using the research application interfaces, or `http://smart:5000`/`http://smart-stu3:5000` when the test suite is testing the authentication process, because the test suite accesses the SMART interfaces directly through Docker networking.
@@ -90,7 +90,7 @@ Then you can check that token against the SMART layer with Postman or curl:
 
 #### Test suite (`tests`)
 
-The [https://github.com/sync-for-science/test-suite](Sync for Science test suite) is included in the reference stack.
+The [Sync for Science test suite](https://github.com/sync-for-science/test-suite) is included in the reference stack.
 
 #### Miscellaneous tasks (`tasks`)
 
@@ -104,7 +104,7 @@ The stack includes a container which is responsible for loading sample data into
 
 ## Developing on the stack
 
-Most of the stack's components are included as git submodules, with a corresponding git repository available at the [https://github.com/sync-for-science](Sync for Science github site). If you wish to develop the components, we recommend cloning the component you're interested in to your local machine, and then mounting your local repository into the Docker container. For example, if I have a local copy of the [https://github.com/sync-for-science/test-suite](SMART layer) located at `/home/s4s/auth_proxy`, I can edit `docker-compose.override.yml` to mount this as a volume and add `FLASK_DEBUG=1` to the environment:
+Most of the stack's components are included as git submodules, with a corresponding git repository available at the [Sync for Science github site](https://github.com/sync-for-science). If you wish to develop the components, we recommend cloning the component you're interested in to your local machine, and then mounting your local repository into the Docker container. For example, if you have a local copy of the [SMART layer](https://github.com/sync-for-science/test-suite) located at `/home/s4s/auth_proxy`, you can edit `docker-compose.override.yml` to mount this as a volume and add `FLASK_DEBUG=1` to the environment:
 
 ```yaml
 services:
