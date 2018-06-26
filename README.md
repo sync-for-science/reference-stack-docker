@@ -1,6 +1,6 @@
 # Docker reference stack
 
-This repository provides a [Docker](https://www.docker.com/)-based technology stack, comprised of many components which together emulate a research application and an electronic health record vendor. These components can be used as reference implementations for developers who wish to develop a research application that consumes electronic health record data from participants, or for EHR vendors who are exploring implementing the [SMART Health IT platform](https://smarthealthit.org/).
+This repository provides a [Docker](https://www.docker.com/)-based technology stack, composed of many components which together emulate a research application and an electronic health record vendor. These components can be used as reference implementations for developers who wish to develop a research application that consumes electronic health record data from participants, or for EHR vendors who are exploring implementing the [SMART Health IT platform](https://smarthealthit.org/).
 
 ## Getting started
 
@@ -27,16 +27,16 @@ Pulling or building the containers for the first time may take several minutes t
 
 This list shows all services and interfaces included in the reference stack, along with default ports which can be adjusted by editing `docker-compose.override.yml`.
 
-| Name                 | Description                   | Port   |
-|----------------------|-------------------------------|--------|
-| `api`                | HAPI-FHIR server (DSTU2)      | `9002` |
-| `api-stu3`           | HAPI-FHIR server (STU3)       | `9005` |
-| `smart`              | SMART layer (DSTU2)           | `9000` |
-| `smart-stu3`         | SMART layer (STU3)            | `9006` |
-| `app`                | Research application frontend | `9001` |
-| `research-app-api`   | Research application backend  | `9005` |
-| `token-introspector` | Token introspection service   | `9004` |
-| `tests`              | Sync for Science test suite   | `9003` |
+| Name                                                                      | Description                   | Port   |
+|---------------------------------------------------------------------------|-------------------------------|--------|
+| [`api`](#hapi-fhir-servers-apiapi-stu3)                                   | HAPI-FHIR server (DSTU2)      | `9002` |
+| [`api-stu3`](#hapi-fhir-servers-apiapi-stu3)                              | HAPI-FHIR server (STU3)       | `9005` |
+| [`smart`](#smart-on-fhir-smartsmart-stu3)                                 | SMART layer (DSTU2)           | `9000` |
+| [`smart-stu3`](#smart-on-fhir-smartsmart-stu3)                            | SMART layer (STU3)            | `9006` |
+| [`app`](#frontend-application-app)                                        | Research application frontend | `9001` |
+| [`research-app-api`](#backend-api-and-synchronizer-research-app-api)      | Research application backend  | `9005` |
+| [`token-introspector`](#token-introspector-token-introspector)            | Token introspection service   | `9004` |
+| [`tests`](#test-suite-tests)                                              | Sync for Science test suite   | `9003` |
 
 ## Components
 
@@ -104,7 +104,7 @@ The stack includes a container which is responsible for loading sample data into
 
 ## Developing on the stack
 
-Most of the stack's components are included as git submodules, with a corresponding git repository available at the [Sync for Science github site](https://github.com/sync-for-science). If you wish to develop the components, we recommend cloning the component you're interested in to your local machine, and then mounting your local repository into the Docker container. For example, if you have a local copy of the [SMART layer](https://github.com/sync-for-science/test-suite) located at `/home/s4s/auth_proxy`, you can edit `docker-compose.override.yml` to mount this as a volume and add `FLASK_DEBUG=1` to the environment:
+Most of the stack's components are included as git submodules, with a corresponding git repository available at the [Sync for Science github site](https://github.com/sync-for-science). If you wish to develop the components, we recommend cloning the component you're interested in to your local machine, and then mounting your local repository into the Docker container. For example, if you have a local copy of the [SMART layer](https://github.com/sync-for-science/test-suite) located at `/home/s4s/auth_proxy`, you can edit `docker-compose.override.yml` to mount this as a volume and add `FLASK_DEBUG=1` to the environment (to enable auto-reload):
 
 ```yaml
 services:
