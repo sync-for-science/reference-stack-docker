@@ -18,6 +18,8 @@ services:
     ports:
      - "9006:5000"
   app:
+    environment:
+     - SYNCHRONIZER_HOST=http://research-app-api:5000
     ports:
      - "9001:5000"
   api:
