@@ -51,7 +51,7 @@ This list shows all services and interfaces included in the reference stack, alo
 We provide a layer that sits on top of the HAPI-FHIR servers and provides some of the functionality prescribed by [SMART on FHIR](http://docs.smarthealthit.org/). This layer acts as an EHR vendor's patient-facing interface, where a participant would be directed to in order to log into the vendor's site and consent to providing a research application with access to their data.
 
 Configuration options in `docker-compose.override.yml`:
- * `BASE_URL`: This should be set to the URL at which the service will be accessible. It's used to generate endpoints in the conformance statement.
+ * `BASE_URL`: This should be set to the URL at which the service will be accessible from the host machine or the outside world. It's used to generate endpoints in the conformance statement.
  * `ENABLE_UNSECURE_FHIR`: This determines whether the open FHIR endpoints are made available.
 
 ### Research application
