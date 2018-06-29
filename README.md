@@ -6,13 +6,12 @@ This repository provides a [Docker](https://www.docker.com/)-based technology st
 
 ### Cloning the repository
 
-The stack makes heavy use of [git submodules](https://git-scm.com/docs/git-submodule), so one extra step is required:
+The stack makes heavy use of [git submodules](https://git-scm.com/docs/git-submodule), so be sure to include the `--recurse-submodules` flag:
 
-    $ git clone https://github.com/sync-for-science/reference-stack-docker
+    $ git clone --recurse-submodules https://github.com/sync-for-science/reference-stack-docker
     ...
-    $ cd reference-stack-docker
-    $ git submodule update --init --recursive
-    ...
+
+Some of the included submodules are fairly large, so the cloning process may take several minutes on slow connections.
 
 ### Running the stack
 
