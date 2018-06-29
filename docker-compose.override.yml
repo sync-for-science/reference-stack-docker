@@ -31,9 +31,6 @@ services:
   tests:
     ports:
      - "9003:5000"
-  tests-stu3:
-    ports:
-     - "9008:5000"
   token-introspector:
     ports:
      - "9004:5000"
