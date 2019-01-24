@@ -45,3 +45,10 @@ docker-compose \
 ### See it in action
 
 https://demo.syncfor.science/fhir-app/launch.html?iss=https://portal.demo.syncfor.science/api/fhir
+
+### Enabling as a `systemd` service
+To enable the stack as a `systemd` service that starts on reboot:
+```
+sudo systemctl enable <path to s4s-stack.service>
+```
+

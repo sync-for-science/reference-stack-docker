@@ -1,0 +1,19 @@
+[Unit]
+Description=S4S Reference Stack
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/ubuntu/s4s-stack
+
+ExecStart=/usr/local/bin/docker-compose -f deploys/demo.syncfor.science/nginx-ssl-proxy/docker-compose.yml up -d
+ExecStart=/usr/local/bin/docker-compose -f docker-compose.yml -f deploys/demo.syncfor.science/docker-compose.yml up -d
+ExecStart=/usr/local/bin/docker-compose -f docker-compose.yml -f deploys/demo.syncfor.science/docker-compose.yml run tasks load-sample-data-stu2
+ExecStart=/usr/local/bin/docker-compose -f docker-compose.yml -f deploys/demo.syncfor.science/docker-compose.yml run tasks load-sample-data-stu3
+
+ExecStop=/usr/local/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
