@@ -82,6 +82,16 @@ services:
     volumes:
       - tests.db:/usr/src/app/testsuite/db
       - /config/vendors/:/usr/src/app/config
+  redirector:
+    networks:
+     - proxy-tier
+    environment:
+     - VIRTUAL_HOST=redirect.demo.syncfor.science
+     - VIRTUAL_NETWORK=nginx-proxy
+     - VIRTUAL_PORT=5000
+     - LETSENCRYPT_HOST=redirect.demo.syncfor.science
+     - BASE_URL=https://redirect.demo.syncfor.science
+     - LETSENCRYPT_EMAIL=letsencrypt@mg.syncfor.science
 networks:
   proxy-tier:
     external:

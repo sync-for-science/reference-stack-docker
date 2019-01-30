@@ -28,3 +28,6 @@
 [submodule "reference-imaging"]
 	path = docker-builds/reference-imaging
 	url = https://github.com/RSNA/s4s-stack
+[submodule "docker-builds/redirector"]
+	path = docker-builds/redirector
+	url = https://github.com/sync-for-science/redirector

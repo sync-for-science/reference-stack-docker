@@ -41,3 +41,6 @@ services:
   research-app-api:
     ports:
      - "9005:5000"
+  redirector:
+    ports:
+     - "9008:5000"

@@ -89,6 +89,13 @@ services:
     image: syncforscience/reference-tasks
     networks:
      - internal
+  redirector:
+    build:
+      context: ./docker-builds/redirector
+      dockerfile: Dockerfile
+    image: syncforscience/redirector
+    networks:
+     - internal
 
 networks:
   internal:
