@@ -94,8 +94,13 @@ services:
       context: ./docker-builds/redirector
       dockerfile: Dockerfile
     image: syncforscience/redirector
+    environment:
+     - UWSGI_PORT=9003
+    expose: ["9003"]
     networks:
-     - internal
+      internal:
+        aliases:
+         - tests.dev.syncfor.science
 
 networks:
   internal:
