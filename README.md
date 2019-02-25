@@ -26,16 +26,17 @@ Pulling or building the containers for the first time may take several minutes t
 
 This list shows all services and interfaces included in the reference stack, along with default ports which can be adjusted by editing `docker-compose.override.yml`.
 
-| Name                                                                      | Description                   | Port   |
-|---------------------------------------------------------------------------|-------------------------------|--------|
-| [`api`](#hapi-fhir-servers-apiapi-stu3)                                   | HAPI-FHIR server (DSTU2)      | `9002` |
-| [`api-stu3`](#hapi-fhir-servers-apiapi-stu3)                              | HAPI-FHIR server (STU3)       | `9005` |
-| [`smart`](#smart-on-fhir-smartsmart-stu3)                                 | SMART layer (DSTU2)           | `9000` |
-| [`smart-stu3`](#smart-on-fhir-smartsmart-stu3)                            | SMART layer (STU3)            | `9006` |
-| [`app`](#frontend-application-app)                                        | Research application frontend | `9001` |
-| [`research-app-api`](#backend-api-and-synchronizer-research-app-api)      | Research application backend  | `9005` |
-| [`token-introspector`](#token-introspector-token-introspector)            | Token introspection service   | `9004` |
-| [`tests`](#test-suite-tests)                                              | Sync for Science test suite   | `9003` |
+| Name                                                                      | Description                         | Port   |
+|---------------------------------------------------------------------------|-------------------------------------|--------|
+| [`api`](#hapi-fhir-servers-apiapi-stu3)                                   | HAPI-FHIR server (DSTU2)            | `9002` |
+| [`api-stu3`](#hapi-fhir-servers-apiapi-stu3)                              | HAPI-FHIR server (STU3)             | `9005` |
+| [`smart`](#smart-on-fhir-smartsmart-stu3)                                 | SMART layer (DSTU2)                 | `9000` |
+| [`smart-stu3`](#smart-on-fhir-smartsmart-stu3)                            | SMART layer (STU3)                  | `9006` |
+| [`app`](#frontend-application-app)                                        | Research application frontend       | `9001` |
+| [`research-app-api`](#backend-api-and-synchronizer-research-app-api)      | Research application backend        | `9005` |
+| [`token-introspector`](#token-introspector-token-introspector)            | Token introspection service         | `9004` |
+| [`tests`](#test-suite-tests)                                              | Sync for Science test suite         | `9003` |
+| [`redirector`](#redirector-redirector)                                    | Service running at the redirect URI | `9008` |
 
 ## Components
 
@@ -85,7 +86,10 @@ Then you can check that token against the SMART layer with Postman or curl:
       },
       "scope": "Patient/*.read"
     }
+    
+#### Redirector (`redirector`)
 
+A service which can listen at the redirect URI to detect if the redirection occurred by `POST` - if so, the request is redirected via a `GET` request to the same URI, with any posted form data moved into the query string, along with `method=post`.
 
 #### Test suite (`tests`)
 
