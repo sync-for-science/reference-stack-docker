@@ -1,14 +1,5 @@
 ## Deploy to demo.syncfor.science
 
-
-### Prepare the remote docker-machine
-
-```
-eval $(docker-machine env demo-host)
-docker network create nginx-proxy
-docker-machine scp -r  deploys/demo.syncfor.science/config/ demo-host:/
-```
-
 ### Launch the SMART stack
 
 ```
